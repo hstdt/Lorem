@@ -81,7 +81,7 @@ public struct Grayscale: Palette {
 /// Represents system colors on the current platform (e.g. systemRed, systemBlue, etc.). These colors are well suited for both light/dark modes (where applicable)
 public struct System: Palette {
     public var color: Color {
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
             var colors: [UIColor] = [
                 .systemRed, .systemBlue, .systemPink, .systemTeal,
                 .systemBrown, .systemIndigo, .systemOrange,
