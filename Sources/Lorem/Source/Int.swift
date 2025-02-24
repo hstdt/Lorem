@@ -17,7 +17,6 @@ public enum AgeGroup {
 }
 
 public extension Lorem where Content == Int {
-    typealias L = Lorem<Content>
 
     /// Returns a placeholder year between 1900 and the current year
     static var year: Content {

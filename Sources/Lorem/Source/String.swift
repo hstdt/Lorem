@@ -1,7 +1,6 @@
 import Foundation
 
 public extension Lorem where Content == String {
-    typealias L = Lorem<Content>
 
     /// Returns a placeholder for representing a single word
     static var word: String {
@@ -13,7 +12,7 @@ public extension Lorem where Content == String {
     ///   - count: The number of times a word should be generated
     ///   - separator: The separator to use when composing these words
     static func words(_ count: Int, separator: String = " ") -> String {
-        Composer(L.Data.words.randomElement()!, count: count, separator: separator)
+        Composer(Lorem<Content>.Data.words.randomElement()!, count: count, separator: separator)
     }
 
     /// Returns a placeholder for representing the specified number of words
@@ -21,7 +20,7 @@ public extension Lorem where Content == String {
     ///   - countRange: The number of times a word should be generated, the actual count will be a random value in the provided range
     ///   - separator: The separator to use when composing these words
     static func words(_ countRange: ClosedRange<Int>, separator: String = " ") -> String {
-        Composer(L.Data.words.randomElement()!, countRange: countRange, separator: separator)
+        Composer(Lorem<Content>.Data.words.randomElement()!, countRange: countRange, separator: separator)
     }
 
     /// Returns a placeholder for representing a title, containing 2 to 5 words
@@ -43,12 +42,12 @@ public extension Lorem where Content == String {
 
     /// Returns a placeholder for representing a person's first name
     static var firstName: String {
-        L.Data.firstNames.randomElement()!
+        Lorem<Content>.Data.firstNames.randomElement()!
     }
 
     /// Returns a placeholder for representing a person's last name
     static var lastName: String {
-        L.Data.lastNames.randomElement()!
+        Lorem<Content>.Data.lastNames.randomElement()!
     }
 
     /// Returns a placeholder for representing a person's name
@@ -100,19 +99,19 @@ public extension Lorem where Content == String {
 
     /// Returns a placeholder URL
     static var url: String {
-        "http://" + L.Data.siteDomains.randomElement()! + "/"
+        "http://" + Lorem<Content>.Data.siteDomains.randomElement()! + "/"
     }
 
     /// Returns a placeholder email address
     static var email: String {
         let delimiter = ["", ".", "-", "_"].randomElement()!
-        let domain = L.Data.emailDomains.randomElement()!
+        let domain = Lorem<Content>.Data.emailDomains.randomElement()!
         return (firstName + delimiter + lastName + "@" + domain).lowercased()
     }
 
     /// Returns a 140 character placeholder representing a tweet
     static var tweet: String {
-        L.Data.tweets.randomElement()!
+        Lorem<Content>.Data.tweets.randomElement()!
     }
 
     /// Returns a set of placeholder keywords, containing 5 to 10 words
